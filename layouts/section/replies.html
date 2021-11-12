@@ -5,7 +5,7 @@
 		{{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "reply") }}
 		{{ $list := $paginator.Pages }}
 		{{ range $list  }}
-		  <div class="h-entry">
+		  <p class="h-entry">
 			{{ if .Title }}
 				<h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
 			{{ end }}
@@ -15,12 +15,12 @@
 			<div class="e-content">
 				{{ .Content }}
 			</div>
-		  </div>
+		  </p>
 		{{ end }}
     {{ else }}
 		{{ $list := first 25 (where .Data.Pages.ByDate.Reverse "Type" "reply") }}
 		{{ range $list  }}
-		  <div class="h-entry">
+		  <p class="h-entry">
 			{{ if .Title }}
 				<h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
 			{{ end }}
@@ -30,7 +30,7 @@
 			<div class="e-content">
 				{{ .Content }}
 			</div>
-		  </div>
+		  </p>
 		{{ end }}
     {{ end }}
 

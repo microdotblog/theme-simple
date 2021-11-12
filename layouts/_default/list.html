@@ -3,7 +3,7 @@
 
 	{{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "post") (index .Site.Params "archive-paginate" | default 25) }}
 	{{ range $paginator.Pages  }}
-      <div class="h-entry">
+      <p class="h-entry">
 		{{ if .Title }}
 			<h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
 		{{ end }}
@@ -13,7 +13,7 @@
         <div class="e-content">
          	{{ .Content }}
         </div>
-      </div>
+      </p>
     {{ end }}
 
   <p>subscribe <a href="{{ "feed.xml" | absURL }}">via RSS</a></p>
