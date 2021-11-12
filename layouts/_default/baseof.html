@@ -7,11 +7,9 @@
 
     {{ partial "header.html" . }}
 
-    <div>
-      <div>
+    <main>
 		{{ block "main" . }}{{ end }}
-      </div>
-    </div>
+    </main>
 
     {{ partial "footer.html" . }}
     {{ partial "custom_footer.html" . }}
@@ -19,6 +17,7 @@
 		{{ range .Site.Params.plugins_js }}
 			<script src="{{ . }}"></script>
 		{{ end }}
+
   </body>
 
 </html>
