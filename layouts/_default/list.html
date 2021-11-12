@@ -1,10 +1,9 @@
 {{ define "main" }}
 <div class="h-feed">
 
-  <ul>
 	{{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "post") (index .Site.Params "archive-paginate" | default 25) }}
 	{{ range $paginator.Pages  }}
-      <li class="h-entry">
+      <div class="h-entry">
 		{{ if .Title }}
 			<h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
 		{{ end }}
@@ -14,9 +13,8 @@
         <div class="e-content">
          	{{ .Content }}
         </div>
-      </li>
+      </div>
     {{ end }}
-  </ul>
 
   <p>subscribe <a href="{{ "feed.xml" | absURL }}">via RSS</a></p>
 
