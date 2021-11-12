@@ -1,12 +1,10 @@
 {{ define "main" }}
 <div class="h-entry">
 
-  <header>
 	{{ if .Title }}
 	  	<h1 class="p-name">{{ .Title }}</h1>
   	{{ end }}
     <p><time class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "Jan 2, 2006" }}</time></p>
-  </header>
 
   <article class="e-content">
 	{{ .Content }}
